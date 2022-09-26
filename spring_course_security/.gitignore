@@ -1,0 +1,19 @@
+# IntelliJ IDEA Files
+.idea
+*.iml
+*.ipr
+*.iws
+.settings
+
+# Eclipse Files
+.classpath
+.metadata
+.project
+
+
+#Other Files
+/bin
+/classes
+/*.war
+/target
+.DS_Store
