@@ -3,8 +3,12 @@ package com.demkivroman.spring.rest.controller;
 import com.demkivroman.spring.rest.entity.Employee;
 import com.demkivroman.spring.rest.exception_handling.NoSuchEmployeeException;
 import com.demkivroman.spring.rest.service.EmployeeService;
+import com.demkivroman.spring.rest.util.RequestBodyJSON;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -65,5 +69,18 @@ public class MyRESTController {
 
         employeeService.deleteEmployee(id);
         return String.format("Employee with ID = %d was deleted", id);
+    }
+
+    @PostMapping(value = "/schemas/upload",
+            consumes = {MediaType.MULTIPART_FORM_DATA_VALUE},
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public String uploadSchema(
+            @RequestParam String schema,
+            @RequestParam MultipartFile uploadFile
+    ) {
+        String yo = "";
+        System.out.println(schema);
+
+        return null;
     }
 }
