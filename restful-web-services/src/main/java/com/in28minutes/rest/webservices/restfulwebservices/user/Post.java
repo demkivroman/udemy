@@ -5,7 +5,7 @@ import net.minidev.json.annotate.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
-@Entity
+@Entity(name = "post")
 public class Post {
     @Id
     @GeneratedValue

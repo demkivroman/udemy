@@ -18,7 +18,6 @@ public class User {
     @GeneratedValue
     private Integer id;
     @Size(min = 2, message = "Name should be at least 2 symbols")
-    @JsonProperty("user_name")
     private String name;
     @Past(message = "Date should be in the past")
     private LocalDate birthdate;
